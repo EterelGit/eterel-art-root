@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600" role="img" aria-labelledby="title">
+  <title id="title">Kindly Slime Assets</title>
+  <defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#09251d"/><stop offset="1" stop-color="#176b4d"/></linearGradient></defs>
+  <rect width="600" height="600" fill="url(#g)"/>
+  <g fill="#b9f55c">
+    <rect x="98" y="164" width="82" height="82" rx="15"/><rect x="190" y="256" width="82" height="82" rx="15" opacity=".8"/><rect x="282" y="164" width="82" height="82" rx="15" opacity=".6"/><rect x="374" y="256" width="82" height="82" rx="15" opacity=".9"/>
+    <path d="M151 355c71-39 126 73 198 25 63-42 128 12 128 73 0 57-56 79-177 79-120 0-203-17-203-83 0-38 17-74 54-94z" opacity=".92"/>
+  </g>
+  <circle cx="245" cy="429" r="10" fill="#09251d"/><circle cx="344" cy="429" r="10" fill="#09251d"/>
+  <text x="72" y="90" fill="#eaffc8" font-family="Arial,sans-serif" font-size="24" letter-spacing="8">ASSETS</text>
+</svg>

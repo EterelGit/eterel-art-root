@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600" role="img" aria-labelledby="title">
+  <title id="title">Eterel Art Muzyka</title>
+  <defs><linearGradient id="g" x1="0" y1="1" x2="1" y2="0"><stop stop-color="#311818"/><stop offset="1" stop-color="#8f3434"/></linearGradient></defs>
+  <rect width="600" height="600" fill="url(#g)"/>
+  <circle cx="300" cy="300" r="174" fill="none" stroke="#fff7ec" stroke-width="3" opacity=".35"/>
+  <circle cx="300" cy="300" r="112" fill="#fff7ec"/>
+  <circle cx="300" cy="300" r="28" fill="#9c3d3d"/>
+  <path d="M106 300h96m196 0h96M300 106v96m0 196v96" stroke="#fff7ec" stroke-width="9" stroke-linecap="round"/>
+  <text x="72" y="90" fill="#fff7ec" font-family="Arial,sans-serif" font-size="24" letter-spacing="8">MUZYKA</text>
+</svg>

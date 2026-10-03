@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Eterel Art - Independent Creative Studio</title>
+  <meta name="description" content="Eterel Art is a home for independent music, applications and creative tools for Unity.">
+  <link rel="canonical" href="https://eterel.art/">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Eterel Art - Independent Creative Studio">
+  <meta property="og:description" content="Eterel Art is a home for independent music, applications and creative tools for Unity.">
+  <meta property="og:url" content="https://eterel.art/">
+  <meta name="twitter:card" content="summary">
+  <link rel="icon" href="favicon.svg?v=2" type="image/svg+xml" sizes="any">
+  <link rel="shortcut icon" href="favicon.svg?v=2" type="image/svg+xml">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"ItemList","name":"Eterel Art projects","url":"https://eterel.art/","itemListElement":[{"@type":"ListItem","position":1,"name":"Eterel Art Music","description":"Eterel Art Music is an independent multi-genre music project and studio bringing together a wide range of musical styles. Its catalog includes pop and electronic music, rock and metal, industrial, hip hop, folk ballads, ambient, and dance-oriented genres. Each release has its own style, atmosphere, and concept — ranging from bright, playful, and humorous songs to darker, experimental, and heavier works.","url":"https://music.eterel.art"},{"@type":"ListItem","position":2,"name":"Eterel Art Muzyka","description":"Eterel Art Muzyka to niezależny polski projekt i studio muzyczne, łączące różne gatunki i nastroje — od indie popu, indie rocka, popu i elektroniki po rock, metal, ambient, hip-hop oraz muzykę taneczną. W twórczości pojawiają się również motywy narodowe i folkowe, piosenki o miłości, osobistych emocjach i refleksjach nad życiem. Każdy utwór ma własny charakter i przekaz, a różnorodność stylistyczna nie przeszkadza w zachowaniu najważniejszej zasady projektu — muzyka ma nie tylko brzmieć, ale także coś znaczyć.","url":"https://muzyka.eterel.art"},{"@type":"ListItem","position":3,"name":"Kindly Slime Assets","description":"(SOON)\nUnity tools, shaders, VFX, and procedural systems for game creators.\nA magic kit for animators and visual effects artists.","url":"https://assets.eterel.art"}]}</script>
+  <style>
+    :root { color-scheme:dark; --paper:#0e0916; --grid:#8a9dff; --ink:#e9e9e2; --muted:#beb5a2; --monogram-bg:#ffffff; --monogram-ink:#000000; --row-hover:#3b2956; --hero-eyebrow-size:11px; --hero-heading-size:56px; --hero-intro-size:16px; --hero-top-space:45px; --hero-bottom-space:44px; --line:color-mix(in srgb,var(--ink) 23%,transparent); }
+    * { box-sizing:border-box; }
+    html { scroll-behavior:smooth; }
+    body { margin:0; min-height:100vh; overflow-x:hidden; background:var(--paper); color:var(--ink); font-family:Inter,"Helvetica Neue",Arial,sans-serif; -webkit-font-smoothing:antialiased; }
+    body::before { content:""; position:fixed; z-index:0; inset:0; pointer-events:none; opacity:.18; background-image:linear-gradient(var(--grid) 1px,transparent 1px),linear-gradient(90deg,var(--grid) 1px,transparent 1px); background-size:64px 64px; mask-image:linear-gradient(to bottom,#000 0%,#000 18%,transparent 76%); }
+    body::after { content:""; position:fixed; z-index:0; inset:0; pointer-events:none; background:radial-gradient(circle at 78% 12%,color-mix(in srgb,var(--grid) 12%,transparent),transparent 31%),radial-gradient(circle at 8% 42%,#9a4dff0b,transparent 24%); }
+    #grid-runners { position:fixed; z-index:1; inset:0; width:100%; height:100%; pointer-events:none; mix-blend-mode:screen; }
+    a { color:inherit; }
+    .page { position:relative; z-index:2; width:min(1180px,calc(100% - 48px)); margin:0 auto; padding:34px 0 28px; }
+    .topbar { display:flex; align-items:center; justify-content:space-between; padding-bottom:24px; border-bottom:1px solid var(--line); }
+    .mark { display:flex; align-items:center; gap:12px; text-decoration:none; font-size:13px; font-weight:800; letter-spacing:.18em; text-transform:uppercase; }
+    .mark-icon { width:34px; height:34px; display:grid; place-items:center; color:var(--monogram-ink); background:var(--monogram-bg); border-radius:50%; font-size:12px; letter-spacing:0; }
+    .top-note { color:var(--muted); font-size:12px; letter-spacing:.08em; text-transform:uppercase; }
+    .hero { display:grid; grid-template-columns:1.35fr .65fr; gap:70px; align-items:end; padding:var(--hero-top-space) 0 var(--hero-bottom-space); }
+    .eyebrow { margin:0 0 14px; color:var(--muted); font-size:var(--hero-eyebrow-size); font-weight:800; letter-spacing:.22em; text-transform:uppercase; }
+    h1 { margin:0; max-width:780px; font-family:Georgia,"Times New Roman",serif; font-size:var(--hero-heading-size); font-weight:400; line-height:.92; letter-spacing:-.045em; }
+    .intro { min-width:0; max-width:360px; margin:0; overflow-wrap:anywhere; color:var(--muted); font-size:var(--hero-intro-size); line-height:1.7; }
+    .directory { border-top:1px solid var(--ink); }
+    .site-row { --accent:#30302b; position:relative; display:grid; grid-template-columns:42px 124px minmax(220px,.8fr) minmax(280px,1.2fr) 58px; gap:24px; align-items:center; min-height:172px; padding:23px 0; border-bottom:1px solid var(--line); text-decoration:none; isolation:isolate; }
+    .site-row::before { content:""; position:absolute; z-index:-1; inset:0 -22px; background:var(--row-hover); opacity:0; transform:scaleY(.88); transition:opacity .24s,transform .24s; border-radius:3px; }
+    .site-row:hover::before,.site-row:focus-visible::before { opacity:1; transform:scaleY(1); }
+    .site-row:focus-visible { outline:2px solid var(--ink); outline-offset:7px; }
+    .number { align-self:start; padding-top:4px; color:var(--muted); font:11px/1.2 ui-monospace,SFMono-Regular,Consolas,monospace; }
+    .cover { width:124px; height:124px; object-fit:cover; border-radius:3px; background:#ddd; filter:saturate(.9); transition:transform .35s cubic-bezier(.2,.7,.2,1),filter .25s; }
+    .site-row:hover .cover { transform:scale(1.035) rotate(-.6deg); filter:saturate(1.08); }
+    .label { display:block; margin-bottom:10px; color:var(--muted); font-size:10px; font-weight:800; letter-spacing:.17em; text-transform:uppercase; }
+    .title { margin:0; font-family:Georgia,"Times New Roman",serif; font-size:clamp(26px,3vw,43px); font-weight:400; line-height:1; letter-spacing:-.025em; }
+    .description { min-width:0; margin:0; max-width:500px; overflow-wrap:anywhere; color:var(--muted); font-size:14px; line-height:1.65; }
+    .arrow { width:50px; height:50px; display:grid; place-items:center; justify-self:end; border:1px solid var(--line); border-radius:50%; font-size:22px; transition:.25s; }
+    .site-row:hover .arrow { color:var(--paper); background:var(--ink); border-color:var(--ink); transform:translate(4px,-4px); }
+    .arcade { margin-top:72px; }
+    .game-frame { position:relative; }
+    #galactica { display:block; width:100%; aspect-ratio:16/8.4; min-height:360px; max-height:650px; touch-action:none; cursor:grab; }
+    #galactica.is-dragging { cursor:grabbing; }
+    footer { display:grid; grid-template-columns:1fr auto 1fr; align-items:center; gap:20px; padding:34px 0 8px; color:var(--muted); font-size:11px; letter-spacing:.08em; text-transform:uppercase; }
+    .footer-email { justify-self:center; text-decoration:none; text-transform:none; }
+    .footer-email:hover,.footer-email:focus-visible { color:var(--ink); text-decoration:underline; text-underline-offset:3px; }
+    .footer-right { justify-self:end; }
+    @media(max-width:820px) {
+      .page { width:min(100% - 28px,680px); padding-top:20px; }
+      .top-note { display:none; }
+      .hero { grid-template-columns:1fr; gap:24px; padding:var(--hero-top-space) 0 var(--hero-bottom-space); }
+      .intro { max-width:520px; }
+      .site-row { grid-template-columns:30px 92px 1fr 45px; gap:14px; min-height:134px; padding:20px 0; }
+      .cover { width:92px; height:92px; }
+      .description { grid-column:3/5; margin-top:-23px; padding-right:16px; }
+      .arrow { grid-column:4; grid-row:1; width:42px; height:42px; }
+      .title { font-size:29px; }
+      .arcade { margin-top:58px; }
+      #galactica { min-height:390px; aspect-ratio:4/3; }
+    }
+    @media(max-width:540px) {
+      h1 { font-size:min(var(--hero-heading-size),48px); }
+      .site-row { grid-template-columns:24px 74px minmax(0,1fr); gap:12px; }
+      .cover { width:74px; height:74px; }
+      .arrow { display:none; }
+      .description { grid-column:2/4; margin:0; padding:0 4px 3px 0; }
+      .label { margin-bottom:5px; font-size:9px; }
+      .title { font-size:25px; }
+      .arcade { margin-top:42px; }
+      #galactica { min-height:430px; aspect-ratio:3/4; }
+      footer { grid-template-columns:1fr; align-items:start; }
+      .footer-email,.footer-right { justify-self:start; }
+    }
+    @media(prefers-reduced-motion:reduce) { *,*::before { scroll-behavior:auto!important; transition:none!important; } }
+  </style>
+</head>
+<body>
+  <canvas id="grid-runners" aria-hidden="true"></canvas>
+  <div class="page">
+    <header class="topbar">
+      <a class="mark" href="/" aria-label="Eterel Art home"><span class="mark-icon">ETR</span><span>Eterel Art</span></a>
+      <span class="top-note">Independent creative studio | Since 2026</span>
+    </header>
+
+    <main>
+      <section class="hero" aria-labelledby="page-title">
+        <div><p class="eyebrow">Digital spaces</p><h1 id="page-title">One studio<br>Different worlds</h1></div>
+        <p class="intro">Music, audiovisual releases, and creative tools, applications gathered under one roof. Choose a direction to enter.</p>
+      </section>
+
+      <nav class="directory" aria-label="Eterel Art websites">
+        
+        <a class="site-row" href="https://music.eterel.art">
+          <span class="number">01</span>
+          <img class="cover" src="/uploads/logo-ert2-1790418232370.jpg" alt="" width="124" height="124" loading="eager">
+          <div><span class="label">Music · English</span><h2 class="title">Eterel Art Music</h2></div>
+          <p class="description">Eterel Art Music is an independent multi-genre music project and studio bringing together a wide range of musical styles. Its catalog includes pop and electronic music, rock and metal, industrial, hip hop, folk ballads, ambient, and dance-oriented genres. Each release has its own style, atmosphere, and concept — ranging from bright, playful, and humorous songs to darker, experimental, and heavier works.</p>
+          <span class="arrow" aria-hidden="true">↗</span>
+        </a>
+        <a class="site-row" href="https://muzyka.eterel.art">
+          <span class="number">02</span>
+          <img class="cover" src="/uploads/eterelart-muzyka-1790419196599.jpg" alt="" width="124" height="124" loading="lazy">
+          <div><span class="label">Muzyka · Polski</span><h2 class="title">Eterel Art Muzyka</h2></div>
+          <p class="description">Eterel Art Muzyka to niezależny polski projekt i studio muzyczne, łączące różne gatunki i nastroje — od indie popu, indie rocka, popu i elektroniki po rock, metal, ambient, hip-hop oraz muzykę taneczną. W twórczości pojawiają się również motywy narodowe i folkowe, piosenki o miłości, osobistych emocjach i refleksjach nad życiem. Każdy utwór ma własny charakter i przekaz, a różnorodność stylistyczna nie przeszkadza w zachowaniu najważniejszej zasady projektu — muzyka ma nie tylko brzmieć, ale także coś znaczyć.</p>
+          <span class="arrow" aria-hidden="true">↗</span>
+        </a>
+        <a class="site-row" href="https://assets.eterel.art">
+          <span class="number">03</span>
+          <img class="cover" src="/images/assets.svg" alt="" width="124" height="124" loading="lazy">
+          <div><span class="label">Unity · Tools &amp; VFX</span><h2 class="title">Kindly Slime Assets</h2></div>
+          <p class="description">(SOON)
+Unity tools, shaders, VFX, and procedural systems for game creators.
+A magic kit for animators and visual effects artists.</p>
+          <span class="arrow" aria-hidden="true">↗</span>
+        </a>
+      </nav>
+
+      <section class="arcade" aria-label="Galactica arcade game">
+        <div class="game-frame">
+          <canvas id="galactica" aria-label="Galactica arcade game. Drag left and right to move and fire."></canvas>
+        </div>
+      </section>
+    </main>
+
+    <footer><span>2026 Eterel Art</span><a class="footer-email" href="mailto:info@eterel.art">info@eterel.art</a><span class="footer-right">eterel.art | Warsaw, Poland</span></footer>
+  </div>
+  <script src="arcade.js" defer></script>
+</body>
+</html>
