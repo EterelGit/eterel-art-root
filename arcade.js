@@ -8,6 +8,8 @@
   const smoothstep = value => value * value * (3 - 2 * value);
   const MAX_LEVEL = 28;
   const PLAYER_FIRE_DELAY_SCALE = 1.4;
+  const GAME_WIDTH = 900;
+  const GAME_HEIGHT = 480;
 
   // Rare light fragments travelling strictly along the 64px page grid.
   const runnerCanvas = document.querySelector('#grid-runners');
@@ -121,8 +123,8 @@
 
   const context = canvas.getContext('2d');
   const colors = ['#7ef9ff', '#ff62c6', '#ffd35a'];
-  let width = 900;
-  let height = 480;
+  const width = GAME_WIDTH;
+  const height = GAME_HEIGHT;
   let dpr = 1;
   let lastTime = performance.now();
   let elapsedTime = 0;
@@ -167,20 +169,12 @@
 
   function resizeGame() {
     const bounds = canvas.getBoundingClientRect();
-    const previousWidth = width;
-    width = Math.max(280, bounds.width);
-    height = Math.max(340, bounds.height);
     dpr = Math.min(devicePixelRatio || 1, 2);
-    canvas.width = Math.round(width * dpr);
-    canvas.height = Math.round(height * dpr);
-    context.setTransform(dpr, 0, 0, dpr, 0, 0);
-    if (previousWidth) {
-      player.x = clamp(player.x * width / previousWidth, 28, width - 28);
-      player.targetX = player.x;
-    }
+    canvas.width = Math.max(1, Math.round(bounds.width * dpr));
+    canvas.height = Math.max(1, Math.round(bounds.height * dpr));
+    context.setTransform(canvas.width / width, 0, 0, canvas.height / height, 0, 0);
     player.y = height - 58;
     makeStars();
-    if ((mode === 'ready' || mode === 'playing' || mode === 'transition') && enemies.length) positionFormation();
   }
 
   function makeStars() {
@@ -289,7 +283,7 @@
 
   function pointerX(event) {
     const bounds = canvas.getBoundingClientRect();
-    return clamp(event.clientX - bounds.left, 26, width - 26);
+    return clamp((event.clientX - bounds.left) * width / bounds.width, 26, width - 26);
   }
 
   canvas.addEventListener('pointerdown', event => {

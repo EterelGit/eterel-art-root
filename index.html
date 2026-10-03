@@ -47,7 +47,7 @@
     .site-row:hover .arrow { color:var(--paper); background:var(--ink); border-color:var(--ink); transform:translate(4px,-4px); }
     .arcade { margin-top:72px; }
     .game-frame { position:relative; }
-    #galactica { display:block; width:100%; aspect-ratio:16/8.4; min-height:360px; max-height:650px; touch-action:none; cursor:grab; }
+    #galactica { display:block; width:100%; height:auto; aspect-ratio:15/8; touch-action:none; cursor:grab; }
     #galactica.is-dragging { cursor:grabbing; }
     footer { display:grid; grid-template-columns:1fr auto 1fr; align-items:center; gap:20px; padding:34px 0 8px; color:var(--muted); font-size:11px; letter-spacing:.08em; text-transform:uppercase; }
     .footer-email { justify-self:center; text-decoration:none; text-transform:none; }
@@ -64,7 +64,6 @@
       .arrow { grid-column:4; grid-row:1; width:42px; height:42px; }
       .title { font-size:29px; }
       .arcade { margin-top:58px; }
-      #galactica { min-height:390px; aspect-ratio:4/3; }
     }
     @media(max-width:540px) {
       h1 { font-size:min(var(--hero-heading-size),48px); }
@@ -75,7 +74,6 @@
       .label { margin-bottom:5px; font-size:9px; }
       .title { font-size:25px; }
       .arcade { margin-top:42px; }
-      #galactica { min-height:430px; aspect-ratio:3/4; }
       footer { grid-template-columns:1fr; align-items:start; }
       .footer-email,.footer-right { justify-self:start; }
     }
@@ -125,7 +123,7 @@ A magic kit for animators and visual effects artists.</p>
 
       <section class="arcade" aria-label="Galactica arcade game">
         <div class="game-frame">
-          <canvas id="galactica" aria-label="Galactica arcade game. Drag left and right to move and fire."></canvas>
+          <canvas id="galactica" width="900" height="480" aria-label="Galactica arcade game. Drag left and right to move and fire."></canvas>
         </div>
       </section>
     </main>
